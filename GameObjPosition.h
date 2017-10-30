@@ -4,6 +4,7 @@
 class GameObjPosition
 {
 public:
+	GameObjPosition();
 	GameObjPosition(int x, int y);
 	int getX();
 	int getY();

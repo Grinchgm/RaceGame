@@ -9,11 +9,11 @@ class Car : public IGameObj
 public:
 	Car(GameObjPosition pos);
 		
-	virtual void calcLeft(); // TODO:
-	virtual void calcRight(); // TODO:
-	virtual void calcDown() {};
-	virtual void calcForward() {};
-	virtual void calcBack() {};
+	virtual void calcLeft() override; // TODO:
+	virtual void calcRight() override; // TODO:
+	virtual void calcDown() override  {};
+	virtual void calcForward() override {};
+	virtual void calcBack() override  {};
 	GameObjPosition getPosition() const;
 	
 private:

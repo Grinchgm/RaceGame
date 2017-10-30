@@ -15,7 +15,6 @@ class Frame
 public:
 	Frame();
 	
-	
 	void calculateLeft();	// move car left to 1 pos
 	void calculateRight(); // move car right to 1 pos
 	void buildObstacles();
