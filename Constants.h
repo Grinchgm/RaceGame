@@ -1,8 +1,11 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-const int ROW = 25;
-const int COLUMN = 26;
+const int ROW = 26;
+const int COLUMN = 25;
 const int obsCount = 5;
+const int CAR_INIT_POSITION = COLUMN / 2;
+const int ROAD_LEFT_BORDER = 1;
+const int ROAD_RIGHT_BORDER = 23;
 
 #endif //!CONSTANTS_H

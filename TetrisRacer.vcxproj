@@ -118,8 +118,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObjPosition.cpp" />
     <ClCompile Include="Obstacle.cpp" />
-    <ClCompile Include="TestRacer.cpp" />
-    <ClCompile Include="TetrisRaser.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Road.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +131,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObjPosition.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Road.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="UserInputController.h" />
     <ClInclude Include="UserInputEvent.h" />

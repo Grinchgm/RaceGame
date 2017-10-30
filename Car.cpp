@@ -2,45 +2,44 @@
 
 Car::Car(GameObjPosition pos)
 	: m_carPosition(pos)
+	, m_movedLeft(false)
+	, m_movedRight(false)
 {
 
 }
 
 void Car::calcLeft()
 {
-	if (m_carPosition.getY() - 2 != 2)
+	if (m_carPosition.getY() - 2 != ROAD_LEFT_BORDER)
 	{
-		m_screen[m_carTopX - 4][m_carTopY] = ' ';
-		m_screen[m_carTopX - 3][m_carTopY + 1] = ' ';
-		m_screen[m_carTopX - 2][m_carTopY] = ' ';
-		m_screen[m_carTopX - 1][m_carTopY + 1] = ' ';
-
-		m_carTopY--;
-
-		m_screen[m_carTopX - 4][m_carTopY] = 'x';
-		m_screen[m_carTopX - 3][m_carTopY - 1] = 'x';
-		m_screen[m_carTopX - 2][m_carTopY] = 'x';
-		m_screen[m_carTopX - 1][m_carTopY - 1] = 'x';
+		m_carPosition.setY(m_carPosition.getY() - 1);
+		m_movedLeft = true;
 	}
 }
 
 void Car::calcRight()
 {
-	if (m_carTopY + 2 != 23)
+	if (m_carPosition.getY() + 2 != ROAD_RIGHT_BORDER)
 	{
-		m_screen[m_carTopX - 4][m_carTopY] = ' ';
-		m_screen[m_carTopX - 3][m_carTopY - 1] = ' ';
-		m_screen[m_carTopX - 2][m_carTopY] = ' ';
-		m_screen[m_carTopX - 1][m_carTopY - 1] = ' ';
-
-		m_carTopY++;
-
-		m_screen[m_carTopX - 4][m_carTopY] = 'x';
-		m_screen[m_carTopX - 3][m_carTopY + 1] = 'x';
-		m_screen[m_carTopX - 2][m_carTopY] = 'x';
-		m_screen[m_carTopX - 1][m_carTopY + 1] = 'x';
-
+		m_carPosition.setY(m_carPosition.getY() + 1);
+		m_movedRight = true;
 	}
+}
+
+bool Car::isMovedLeft()
+{
+	return m_movedLeft;
+}
+
+bool Car::isMovedRight()
+{
+	return m_movedRight;
+}
+
+void Car::resetMove()
+{
+	m_movedLeft = false;
+	m_movedRight = false;
 }
 
 GameObjPosition Car::getPosition() const

@@ -7,7 +7,7 @@ FrameGenerator::FrameGenerator()
 
 bool FrameGenerator::build()
 {
-	//m_currentFrame.updateGameObjects();
+	m_currentFrame.updateFrame();
 	//m_currentFrame.buildObstacles();
 	return m_currentFrame.checkForCollision();
 }
