@@ -19,8 +19,3 @@ void Timer::calcBack()
 {
 	m_timer++;
 }
-
-int Timer::getTimerValue() const
-{
-	return m_timer;
-};

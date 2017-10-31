@@ -12,16 +12,6 @@ GameObjPosition::GameObjPosition(int oX = 0, int oY = 0)
 {
 }
 
-int GameObjPosition::getX()
-{
-	return x;
-}
-
-int GameObjPosition::getY()
-{
-	return y;
-}
-
 void GameObjPosition::setX(int oX)
 {
 	x = oX;

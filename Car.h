@@ -18,7 +18,7 @@ public:
 	bool isMovedLeft();
 	bool isMovedRight();
 	void resetMove();
-	GameObjPosition getPosition() const;
+	GameObjPosition getPosition() const { return m_carPosition; };
 private:
 	bool m_movedLeft;
 	bool m_movedRight;

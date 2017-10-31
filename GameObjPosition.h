@@ -6,8 +6,8 @@ class GameObjPosition
 public:
 	GameObjPosition();
 	GameObjPosition(int x, int y);
-	int getX();
-	int getY();
+	inline int getX() const { return x; };
+	inline int getY() const { return y; }
 	void setX(int oX);
 	void setY(int oY);
 		

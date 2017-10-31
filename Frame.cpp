@@ -29,12 +29,6 @@ void Frame::updateFrame()
 	buildRoad();
 }
 
-
-char Frame::getScreenElement(int i, int j)
-{
-	return m_screen[i][j];
-}
-
 /*
 void Frame::setScreenElement(int oX, int oY, char ch)
 {

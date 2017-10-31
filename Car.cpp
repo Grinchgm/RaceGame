@@ -41,8 +41,3 @@ void Car::resetMove()
 	m_movedLeft = false;
 	m_movedRight = false;
 }
-
-GameObjPosition Car::getPosition() const
-{
-	return m_carPosition;
-}

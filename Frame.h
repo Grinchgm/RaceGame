@@ -17,7 +17,7 @@ public:
 	Frame();
 	void updateFrame();
 	bool checkForCollision() { return true; };
-	char getScreenElement(int oX, int oY);
+	inline char getScreenElement(int oX, int oY) {	return m_screen[oX][oY]; };
 	void update(IUserInputCommand* command);
 
 private:

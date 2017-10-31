@@ -17,8 +17,3 @@ void Obstacle::calcDown()
 	}
 	*/
 }
-
-GameObjPosition Obstacle::getPosition() const
-{
-	return m_obstaclePosition;
-}
