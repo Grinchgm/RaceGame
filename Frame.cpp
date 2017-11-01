@@ -4,23 +4,13 @@
 
 
 Frame::Frame()
-	: m_car(GameObjPosition(ROW - 4, CAR_INIT_POSITION)) // todo: initial position
-	//, m_obstacles()
+	: m_car(GameObjPosition(ROW - 4, CAR_INIT_POSITION)) 
+	, m_obstacles(GameObjPosition(TOP_OF_SCREEN, 
+		std::rand() % (ROAD_RIGHT_BORDER - ROAD_LEFT_BORDER) + ROAD_LEFT_BORDER))
 {
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < COLUMN; j++)
 			m_screen[i][j] = ' ';
-	/*
-	// прорисовка дороги
-	
-
-	m_screen[ROW - 1][COLUMN / 2 - 1] = m_screen[ROW - 1][COLUMN / 2] =
-		m_screen[ROW - 1][COLUMN / 2 + 1] = 'x';
-	m_screen[ROW - 2][COLUMN / 2] = 'x';
-	m_screen[ROW - 3][COLUMN / 2 - 1] = m_screen[ROW - 3][COLUMN / 2]
-		= m_screen[ROW - 3][COLUMN / 2 + 1] = 'x';
-	m_screen[ROW - 4][COLUMN / 2] = 'x';
-	*/
 }
 
 void Frame::updateFrame()
@@ -28,13 +18,6 @@ void Frame::updateFrame()
 	buildCar();
 	buildRoad();
 }
-
-/*
-void Frame::setScreenElement(int oX, int oY, char ch)
-{
-	m_screen[oX][oY] = ch;
-}
-*/
 
 void Frame::update(IUserInputCommand * command)
 {
@@ -102,10 +85,16 @@ void Frame::buildRoad()
 	{
 		if (i % 3 == 0)
 		{
-			m_screen[i][0] = '#';
-			m_screen[i][COLUMN - 1] = '#';
+			m_screen[i][ROAD_LEFT_BORDER - 1] = '#';
+			m_screen[i][ROAD_RIGHT_BORDER + 1] = '#';
 		}
-		m_screen[i][1] = '#';
-		m_screen[i][COLUMN - 2] = '#';
+		m_screen[i][ROAD_LEFT_BORDER] = '#';
+		m_screen[i][ROAD_RIGHT_BORDER] = '#';
 	}
+}
+
+void Frame::buildObstacles()
+{
+
+
 }

@@ -29,7 +29,6 @@ private:
 		RightCmd = 77
 	};
 
-	// Factory method
 	IUserInputCommand* generateUserInputEvent(int userInput)
 	{
 		switch (userInput)

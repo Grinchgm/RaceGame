@@ -14,10 +14,15 @@ public:
 	virtual void calcDown() {};
 	virtual void calcForward();
 	virtual void calcBack();
-	inline int getTimerValue() const { return m_timer; };
+	int getTimerValue() const;
 	
 private:
 	int m_timer;
+};
+
+inline int Timer::getTimerValue() const
+{
+	return m_timer;
 };
 #endif // !TIMER_H
 

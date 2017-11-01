@@ -3,11 +3,9 @@
 
 int main(int argc, char* argv[])
 {
-	system("mode con cols=25 lines=26");//задание размеров окна консоли
-	system("title Dead Racer");//задание описания окна консоли
-	system("color 0A");//задание цвета консоли (0-задний фон; А-передний фон)
-	//Frame frame;
-	//FrameVizualizer vizualizer;
+	system("mode con cols=25 lines=26");
+	system("title Dead Racer");
+	system("color 0A");
 	
 	Game game;
 	while (true)

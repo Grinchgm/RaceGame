@@ -17,15 +17,23 @@ public:
 	Frame();
 	void updateFrame();
 	bool checkForCollision() { return true; };
-	inline char getScreenElement(int oX, int oY) {	return m_screen[oX][oY]; };
+	char getScreenElement(int oX, int oY) const;
 	void update(IUserInputCommand* command);
 
 private:
 	char m_screen[ROW][COLUMN];
 	Car m_car;
 	Road m_road;
+	Obstacle m_obstacles;
+
 	void buildCar();
 	void buildRoad();
-	//std::vector<Obstacle> m_obstacles;
+	void buildObstacles();
 };
+
+inline char Frame::getScreenElement(int oX, int oY) const 
+{
+	return m_screen[oX][oY]; 
+};
+
 #endif // !FRAME_H

@@ -16,9 +16,15 @@ public:
 	virtual void calcForward() {};
 	virtual void calcBack() {};
 
-	inline GameObjPosition getPosition() const { return m_obstaclePosition; };
+	GameObjPosition getPosition() const;
 	
 private:
 	GameObjPosition m_obstaclePosition;
 };
+
+inline GameObjPosition Obstacle::getPosition() const
+{
+	return m_obstaclePosition;
+};
+
 #endif OBSTACLE_H

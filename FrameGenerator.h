@@ -17,11 +17,16 @@ public:
 	bool build();
 	void waitForNewCycle();
 	void fireUserCommand(IUserInputCommand* command); //TODO change speed!!!
-	Frame& getCurentFrame() { return m_currentFrame; }
+	Frame& getCurentFrame();
 private:
 	Timer m_timer;
 	Frame m_currentFrame;
 
 	static const int TimerInitialValue = 10;
 };
+
+inline Frame& FrameGenerator::getCurentFrame()
+{
+	return m_currentFrame;
+}
 #endif //!FRAME_GENERATOR_H
