@@ -8,5 +8,6 @@ const int CAR_INIT_POSITION = COLUMN / 2;
 const int ROAD_LEFT_BORDER = 1;
 const int ROAD_RIGHT_BORDER = 23;
 const int TOP_OF_SCREEN = 0;
+const int TimerInitialValue = 10;
 
 #endif //!CONSTANTS_H
