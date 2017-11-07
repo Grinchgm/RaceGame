@@ -21,8 +21,6 @@ public:
 private:
 	Timer m_timer;
 	Frame m_currentFrame;
-
-	static const int TimerInitialValue = 10;
 };
 
 inline Frame& FrameGenerator::getCurentFrame()

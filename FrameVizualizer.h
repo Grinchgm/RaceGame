@@ -4,5 +4,5 @@
 class FrameVizualizer 
 {
 public:
-	void draw(Frame& frame);
+	void draw(Frame& frame) const;
 };

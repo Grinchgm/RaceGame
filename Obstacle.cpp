@@ -1,5 +1,9 @@
 #include "Obstacle.h"
 
+Obstacle::Obstacle()
+{
+}
+
 Obstacle::Obstacle(GameObjPosition pos)
 	: m_obstaclePosition(pos)
 {
@@ -8,12 +12,8 @@ Obstacle::Obstacle(GameObjPosition pos)
 
 void Obstacle::calcDown()
 {
-	/*
-	int randColumn = rand() % (COLUMN - 2) + 2;
-	for (int i = 1;; i++)
+	if (m_obstaclePosition.getX() < constants::ROW)
 	{
-		if (rand() % 10 == 1)
-			m_screen[i][49] = '¤';
+		m_obstaclePosition.setX(m_obstaclePosition.getX() + 1);
 	}
-	*/
 }

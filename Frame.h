@@ -9,19 +9,17 @@
 #include "Obstacle.h"
 #include "Constants.h"
 
-
-
 class Frame
 {
 public:
 	Frame();
 	void updateFrame();
-	bool checkForCollision() { return true; };
+	bool checkForCollision();
 	char getScreenElement(int oX, int oY) const;
 	void update(IUserInputCommand* command);
 
-private:
-	char m_screen[ROW][COLUMN];
+public:
+	char m_screen[constants::ROW][constants::COLUMN];
 	Car m_car;
 	Road m_road;
 	Obstacle m_obstacles;

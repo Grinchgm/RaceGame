@@ -11,6 +11,7 @@ public:
 	Game();
 	void start();
 private:
+	bool m_gameOver = false;
 	UserInputController m_userInputCtrl;
 	FrameGenerator m_frameGenerator;
 	FrameVizualizer m_frameVizualizer;

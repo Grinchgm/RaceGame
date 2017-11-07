@@ -1,14 +1,13 @@
 #include "FrameGenerator.h"
 
 FrameGenerator::FrameGenerator()
-	: m_timer(TimerInitialValue) 
+	: m_timer(constants::TimerInitialValue)
 {
 }
 
 bool FrameGenerator::build()
 {
 	m_currentFrame.updateFrame();
-	//m_currentFrame.buildObstacles();
 	return m_currentFrame.checkForCollision();
 }
 
@@ -24,5 +23,4 @@ void FrameGenerator::fireUserCommand(IUserInputCommand * command)
 		command->proceed(m_timer);
 		m_currentFrame.update(command);
 	}
-	delete command;
 }

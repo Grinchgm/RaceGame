@@ -1,13 +1,16 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-const int ROW = 26;
-const int COLUMN = 25;
-const int obsCount = 5;
-const int CAR_INIT_POSITION = COLUMN / 2;
-const int ROAD_LEFT_BORDER = 1;
-const int ROAD_RIGHT_BORDER = 23;
-const int TOP_OF_SCREEN = 0;
-const int TimerInitialValue = 10;
+namespace constants
+{
+	static const int ROW = 26;
+	static const int COLUMN = 25;
+	static const int obsCount = 5;
+	static const int CAR_INIT_POSITION = COLUMN / 2;
+	static const int ROAD_LEFT_BORDER = 1;
+	static const int ROAD_RIGHT_BORDER = 23;
+	static const int TOP_OF_SCREEN = 0;
+	static const int TimerInitialValue = 10;
+} //constants
 
 #endif //!CONSTANTS_H

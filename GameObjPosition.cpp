@@ -6,7 +6,7 @@ GameObjPosition::GameObjPosition()
 {
 }
 
-GameObjPosition::GameObjPosition(int oX = 0, int oY = 0)
+GameObjPosition::GameObjPosition(int oX, int oY)
 	: x(oX)
 	, y(oY)
 {

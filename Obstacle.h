@@ -3,11 +3,13 @@
 
 #include "GameObjPosition.h"
 #include "IGameObj.h"
+#include "Constants.h"
 #include <iostream>
 
 class Obstacle : public IGameObj
 {
 public:
+	Obstacle();
 	Obstacle(GameObjPosition pos);
 		
 	virtual void calcLeft() {};
@@ -17,6 +19,7 @@ public:
 	virtual void calcBack() {};
 
 	GameObjPosition getPosition() const;
+	void setPosition(int oX, int oY);
 	
 private:
 	GameObjPosition m_obstaclePosition;
@@ -25,6 +28,12 @@ private:
 inline GameObjPosition Obstacle::getPosition() const
 {
 	return m_obstaclePosition;
-};
+}
+
+inline void Obstacle::setPosition(int oX, int oY)
+{
+	m_obstaclePosition.setX(oX);
+	m_obstaclePosition.setY(oY);
+}
 
 #endif OBSTACLE_H

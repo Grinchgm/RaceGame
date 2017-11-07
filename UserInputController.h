@@ -17,7 +17,9 @@ public:
 		{
 			userInput = _getch();
 		}
-		generator.fireUserCommand(generateUserInputEvent(userInput));
+		IUserInputCommand* currentCommand = generateUserInputEvent(userInput);
+		generator.fireUserCommand(currentCommand);
+		delete currentCommand;
 	}
 
 private:

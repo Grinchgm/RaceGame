@@ -1,12 +1,12 @@
 #include"FrameVizualizer.h"
 #include <iostream>
 
-void FrameVizualizer::draw(Frame& frame)
+void FrameVizualizer::draw(Frame& frame) const
 {
 	system("cls");
-	for (int i = 0; i < ROW; i++)
+	for (int i = 0; i < constants::ROW; i++)
 	{
-		for (int j = 0; j < COLUMN; j++)
+		for (int j = 0; j < constants::COLUMN; j++)
 		{
 			std::cout << frame.getScreenElement(i, j);
 		}

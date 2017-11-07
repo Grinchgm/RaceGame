@@ -5,12 +5,11 @@ Car::Car(GameObjPosition pos)
 	, m_movedLeft(false)
 	, m_movedRight(false)
 {
-
 }
 
 void Car::calcLeft()
 {
-	if (m_carPosition.getY() - 2 != ROAD_LEFT_BORDER)
+	if (m_carPosition.getY() - 2 != constants::ROAD_LEFT_BORDER)
 	{
 		m_carPosition.setY(m_carPosition.getY() - 1);
 		m_movedLeft = true;
@@ -19,7 +18,7 @@ void Car::calcLeft()
 
 void Car::calcRight()
 {
-	if (m_carPosition.getY() + 2 != ROAD_RIGHT_BORDER)
+	if (m_carPosition.getY() + 2 != constants::ROAD_RIGHT_BORDER)
 	{
 		m_carPosition.setY(m_carPosition.getY() + 1);
 		m_movedRight = true;

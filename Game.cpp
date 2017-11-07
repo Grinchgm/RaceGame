@@ -7,13 +7,12 @@ Game::Game()
 
 void Game::start()
 {
-	while (true)
+	while (!m_gameOver)
 	{
 		m_userInputCtrl.updateUserInput(m_frameGenerator);
-		if (!m_frameGenerator.build())
+		if (m_frameGenerator.build())
 		{
-			// TODO: GAME OVER
-			break;
+			m_gameOver = true;
 		}
 		m_frameVizualizer.draw(m_frameGenerator.getCurentFrame());
 		m_frameGenerator.waitForNewCycle();
