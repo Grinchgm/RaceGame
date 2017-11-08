@@ -6,7 +6,9 @@
 Frame::Frame()
 	: m_car(GameObjPosition(constants::ROW - 4, constants::CAR_INIT_POSITION))
 	, m_obstacles(GameObjPosition(constants::TOP_OF_SCREEN,
-		std::rand() % (constants::ROAD_RIGHT_BORDER - constants::ROAD_LEFT_BORDER) + constants::ROAD_LEFT_BORDER))
+		std::rand() % (constants::ROAD_RIGHT_BORDER - constants::ROAD_LEFT_BORDER) 
+		+ constants::ROAD_LEFT_BORDER))
+	, m_dashboard(GameObjPosition(constants::TOP_OF_SCREEN, constants::TOP_OF_SCREEN))
 {
 	for (int i = 0; i < constants::ROW; i++)
 		for (int j = 0; j < constants::COLUMN; j++)
@@ -16,6 +18,7 @@ Frame::Frame()
 void Frame::updateFrame()
 {
 	buildCar();
+	buildDashBoard();
 	buildRoad();
 	buildObstacles();
 }
@@ -40,6 +43,7 @@ void Frame::update(IUserInputCommand * command)
 		command->proceed(m_car);
 		//for (auto obstacle : m_obstacles)
 		command->proceed(m_obstacles);
+		command->proceed(m_dashboard);
 	}
 }
 
@@ -93,6 +97,24 @@ void Frame::buildCar()
 	}
 }
 
+void Frame::buildDashBoard()
+{
+	m_screen[constants::TOP_OF_SCREEN][4] = 'K';
+	m_screen[constants::TOP_OF_SCREEN][5] = 'm';
+	m_screen[constants::TOP_OF_SCREEN][6] = '/';
+	m_screen[constants::TOP_OF_SCREEN][7] = 'H';
+	int speed = m_dashboard.getSpeed();
+	for (int i = constants::TOP_OF_SCREEN + 2; speed != 0; i--)
+	{
+		m_screen[constants::TOP_OF_SCREEN][constants::TOP_OF_SCREEN] = ' ';
+		m_screen[constants::TOP_OF_SCREEN][i] = static_cast<char>(speed % 10) + '0';
+		speed /= 10;
+	}
+
+
+
+}
+
 void Frame::buildRoad()
 {
 	for (int i = 1; i < constants::ROW; i++)
@@ -119,6 +141,7 @@ void Frame::buildObstacles()
 	{
 		m_screen[m_obstacles.getPosition().getX()][m_obstacles.getPosition().getY()] = ' ';
 		m_obstacles.setPosition(constants::TOP_OF_SCREEN, std::rand() %
-			(constants::ROAD_RIGHT_BORDER - constants::ROAD_LEFT_BORDER) + constants::ROAD_LEFT_BORDER);
+			(constants::ROAD_RIGHT_BORDER - constants::ROAD_LEFT_BORDER - 1) 
+			+ constants::ROAD_LEFT_BORDER + 1);
 	}
 }

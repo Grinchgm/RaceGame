@@ -112,6 +112,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="DashBoard.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="FrameGenerator.cpp" />
     <ClCompile Include="FrameVizualizer.cpp" />
@@ -125,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="DashBoard.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="FrameGenerator.h" />
     <ClInclude Include="FrameVizualizer.h" />

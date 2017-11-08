@@ -2,6 +2,7 @@
 #define TIMER_H
 
 #include "IGameObj.h"
+#include "Constants.h"
 
 class Timer : public IGameObj
 {

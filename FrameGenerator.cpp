@@ -1,7 +1,7 @@
 #include "FrameGenerator.h"
 
 FrameGenerator::FrameGenerator()
-	: m_timer(constants::TimerInitialValue)
+	: m_timer(constants::TIMER_INITIAL_VALUE)
 {
 }
 

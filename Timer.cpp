@@ -12,10 +12,16 @@ Timer::Timer(int timerValue)
 
 void Timer::calcForward()
 {
-	m_timer--;
+	if (m_timer > constants::TIMER_MIN_VALUE)
+	{
+		m_timer--;
+	}
 }
 
 void Timer::calcBack()
 {
-	m_timer++;
+	if (m_timer < constants::TIMER_INITIAL_VALUE)
+	{
+		m_timer++;
+	}
 }

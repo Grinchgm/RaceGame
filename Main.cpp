@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-	system("mode con cols=25 lines=26");
+	system("mode con cols=25 lines=28");
 	system("title Dead Racer");
 	system("color 0A");
 	

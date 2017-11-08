@@ -12,9 +12,9 @@ public:
 	
 	virtual void calcLeft() override;
 	virtual void calcRight() override;
-	virtual void calcDown() override  {};
+	virtual void calcDown() override {};
 	virtual void calcForward() override {};
-	virtual void calcBack() override  {};
+	virtual void calcBack() override {};
 	bool isMovedLeft();
 	bool isMovedRight();
 	void resetMove();
