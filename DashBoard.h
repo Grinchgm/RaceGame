@@ -4,6 +4,8 @@
 #include "GameObjPosition.h"
 #include "Constants.h"
 #include "IGameObj.h"
+#include <chrono>
+#include <thread>
 
 class DashBoard : public IGameObj
 {
@@ -13,7 +15,7 @@ public:
 	~DashBoard();
 	virtual void calcLeft() override {};
 	virtual void calcRight() override {};
-	virtual void calcDown() override {};
+	virtual void calcDown() override;
 	virtual void calcForward() override;
 	virtual void calcBack() override;
 	int getSpeed() const;

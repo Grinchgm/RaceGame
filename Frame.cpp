@@ -103,6 +103,7 @@ void Frame::buildDashBoard()
 	m_screen[constants::TOP_OF_SCREEN][5] = 'm';
 	m_screen[constants::TOP_OF_SCREEN][6] = '/';
 	m_screen[constants::TOP_OF_SCREEN][7] = 'H';
+
 	int speed = m_dashboard.getSpeed();
 	for (int i = constants::TOP_OF_SCREEN + 2; speed != 0; i--)
 	{
@@ -111,8 +112,13 @@ void Frame::buildDashBoard()
 		speed /= 10;
 	}
 
-
-
+	m_screen[constants::TOP_OF_SCREEN][constants::COLUMN - 2] = 'm';
+	int odometr = m_dashboard.getOdometr();
+	for (int i = constants::COLUMN - 4; odometr != 0; i--)
+	{
+		m_screen[constants::TOP_OF_SCREEN][i] = static_cast<char>(odometr % 10) + '0';
+		odometr /= 10;
+	}
 }
 
 void Frame::buildRoad()

@@ -12,6 +12,9 @@ namespace constants
 	static const int TOP_OF_SCREEN = 0;
 	static const int TIMER_INITIAL_VALUE = 50;
 	static const int TIMER_MIN_VALUE = -10;
+	static const int MIN_CAR_SPEED = 0;
+	static const int MAX_CAR_SPEED = 300;
+	static const int CAR_SPEED_INCREASE = 5;
 } //constants
 
 #endif //!CONSTANTS_H

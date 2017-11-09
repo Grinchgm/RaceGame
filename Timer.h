@@ -25,5 +25,5 @@ inline int Timer::getTimerValue() const
 {
 	return m_timer;
 };
-#endif // !TIMER_H
 
+#endif // !TIMER_H
