@@ -12,8 +12,8 @@ Obstacle::Obstacle(GameObjPosition pos)
 
 void Obstacle::calcDown()
 {
-	if (m_obstaclePosition.getX() < constants::ROW)
+	/*if (m_obstaclePosition.getX() < constants::ROW)
 	{
 		m_obstaclePosition.setX(m_obstaclePosition.getX() + 1);
-	}
+	}*/
 }

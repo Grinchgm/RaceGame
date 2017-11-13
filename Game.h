@@ -10,10 +10,13 @@ class Game
 public:
 	Game();
 	void start();
+	void save() {};
+	void open() {};
 private:
 	bool m_gameOver = false;
 	UserInputController m_userInputCtrl;
 	FrameGenerator m_frameGenerator;
 	FrameVizualizer m_frameVizualizer;
 };
+
 #endif // !GAME_H

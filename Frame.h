@@ -1,7 +1,6 @@
 #ifndef FRAME_H
 #define FRAME_H
 
-#include <vector>
 #include "IUserInputCommand.h"
 #include "IGameObj.h"
 #include "Car.h"
