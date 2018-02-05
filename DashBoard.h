@@ -29,4 +29,4 @@ private:
 inline int DashBoard::getSpeed() const { return m_speed; }
 inline int DashBoard::getOdometr() const { return m_odometr; }
 
-#endif DASH_BOARD_H
+#endif //!DASH_BOARD_H
