@@ -36,4 +36,4 @@ inline void Obstacle::setPosition(int oX, int oY)
 	m_obstaclePosition.setY(oY);
 }
 
-#endif OBSTACLE_H
+#endif //!OBSTACLE_H

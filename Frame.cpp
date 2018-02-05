@@ -41,7 +41,6 @@ void Frame::update(IUserInputCommand * command)
 	if (command)
 	{
 		command->proceed(m_car);
-		//for (auto obstacle : m_obstacles)
 		command->proceed(m_obstacles);
 		command->proceed(m_dashboard);
 	}
@@ -79,21 +78,18 @@ void Frame::buildCar()
 	}
 	else
 	{
-		if (m_car.getPosition().getX() < 25)
-		{
-			m_screen[m_car.getPosition().getX()][m_car.getPosition().getY()] = 'x';
+		m_screen[m_car.getPosition().getX()][m_car.getPosition().getY()] = 'x';
 
-			m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY() - 1] = 'x';
-			m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY()] = 'x';
-			m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY() + 1] = 'x';
+		m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY() - 1] = 'x';
+		m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY()] = 'x';
+		m_screen[m_car.getPosition().getX() + 1][m_car.getPosition().getY() + 1] = 'x';
 
-			m_screen[m_car.getPosition().getX() + 2][m_car.getPosition().getY()] = 'x';
+		m_screen[m_car.getPosition().getX() + 2][m_car.getPosition().getY()] = 'x';
 
-			m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY() - 1] = 'x';
-			m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY()] = 'x';
-			m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY() + 1] = 'x';
-			m_car.resetMove();
-		}
+		m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY() - 1] = 'x';
+		m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY()] = 'x';
+		m_screen[m_car.getPosition().getX() + 3][m_car.getPosition().getY() + 1] = 'x';
+		m_car.resetMove();
 	}
 }
 
@@ -142,9 +138,18 @@ void Frame::buildObstacles()
 		if (m_obstacles.getPosition().getX() == constants::TOP_OF_SCREEN + 1)
 		{
 			m_screen[m_obstacles.getPosition().getX()][m_obstacles.getPosition().getY()] = ' ';
-			m_obstacles.setPosition(constants::BOTTOM_OF_SCREEN, std::rand() %
-				(constants::ROAD_RIGHT_BORDER - constants::ROAD_LEFT_BORDER - 1)
-				+ constants::ROAD_LEFT_BORDER + 1);
+			if (m_car.getPosition().getY() > constants::ROAD_RIGHT_BORDER - m_car.getPosition().getY())
+			{
+				m_obstacles.setPosition(constants::BOTTOM_OF_SCREEN, std::rand() %
+					(m_car.getPosition().getY() - 4 - constants::ROAD_LEFT_BORDER) +
+					constants::ROAD_LEFT_BORDER  + 2);
+			}
+			else
+			{
+				m_obstacles.setPosition(constants::BOTTOM_OF_SCREEN, std::rand() %
+					(constants::ROAD_RIGHT_BORDER - 4 - m_car.getPosition().getY()) + 
+					m_car.getPosition().getY() + 3);
+			}
 		}
 		if (m_obstacles.getPosition().getX() > constants::TOP_OF_SCREEN)
 		{
@@ -169,8 +174,5 @@ void Frame::buildObstacles()
 			m_obstacles.setPosition(m_obstacles.getPosition().getX() + 1, m_obstacles.getPosition().getY());
 			m_screen[m_obstacles.getPosition().getX()][m_obstacles.getPosition().getY()] = '@';
 		}
-
 	}
-	
-	
 }
